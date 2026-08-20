@@ -79,8 +79,6 @@ class TGScheduler:
 
     async def send_message(self, event) -> None:
         logging.info(f"Sending message {event}")
-        msg = event.message
-        msg.raw_text = ""
         await self.client.forward_messages(
             self.target_channel,
             event.message
